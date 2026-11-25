@@ -150,7 +150,7 @@
 
         private void BtnInactivar_Click(object sender, EventArgs e)
         {
-            Persona p = rbAdminRH.Checked ? sistema.adminRH : new Empleado();//condicion ? a =(o) b
+            Persona p = rbAdminRH.Checked ? sistema.adminRH : new Persona();//condicion ? a =(o) b
             MessageBox.Show(sistema.InactivarEmpleado(txtDocEliminar.Text, p, txtUsuarioRH.Text, txtClaveRH.Text));
             ActualizarTablas();
         }

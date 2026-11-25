@@ -34,11 +34,6 @@ namespace interfazgrafica
         public string Cargo { get; set; }
         public bool Activo { get; set; }
 
-        public Empleado()
-        {
-            Activo = true;
-        }
-
         public Empleado(string documento, string nombre, string apellido, DateTime fechaNacimiento, string cargo)
             : base(documento, nombre, apellido, fechaNacimiento)
         {
@@ -50,8 +45,8 @@ namespace interfazgrafica
     // Clase que hereda
     public class AdministradorRH : Empleado
     {
-        public string Usuario { get; set; }
-        public string Clave { get; set; }
+        private string Usuario { get; set; }
+        private string Clave { get; set; }
 
         public AdministradorRH(string documento, string nombre, string apellido, DateTime fechaNacimiento, string usuario, string clave)
             : base(documento, nombre, apellido, fechaNacimiento, "Gestión Humana")
@@ -95,7 +90,7 @@ namespace interfazgrafica
             HorasNocturnas = 0;
         }
 
-        // Calcula horas diurnas (6:00 a. m. a 7:00 p. m.) y nocturnas (7:00 p. m. a 6:00 a. m.)
+        // Calcula horas diurnas (6:00 a. m. a 19:00 p. m.) y nocturnas (19:00 p. m. a 6:00 a. m.)
         public void CalcularHoras()
         {
             DateTime actual = HoraEntrada;
@@ -120,7 +115,7 @@ namespace interfazgrafica
         }
     }
 
-    // Clase Sistema Asistencia / diseno
+    // Clase Sistema Asistencia / diseno_Logica
     public class SistemaAsistencia
     {
         // Vector con los cargos permitidos
@@ -139,12 +134,13 @@ namespace interfazgrafica
         // Contador de intentos rechazados
         public int intentosRechazados = 0;
 
+        //inicializacion del sistema
         public SistemaAsistencia()
         {
             CargarEmpleadosTxt();
             CargarRegistrosTxt();
         }
-
+        //buscar un empleado
         public Empleado BuscarEmpleado(string documento)
         {
             foreach (Empleado emp in listaEmpleados)
@@ -165,7 +161,7 @@ namespace interfazgrafica
                 return "Error: Ya existe un empleado con ese documento.";
             }
 
-            Empleado nuevo = new Empleado(documento, nombre, apellido, fechaNac, cargo);
+            Empleado nuevo = new Empleado(documento, nombre, apellido, fechaNac, cargo);//tipo de dato, nombre
             listaEmpleados.Add(nuevo);
             GuardarEmpleadosTxt();
 
@@ -186,7 +182,7 @@ namespace interfazgrafica
                 return "No se encontró ningún empleado con ese documento.";
             }
 
-            emp.Activo = false;
+            emp.Activo = false; //se ejecuta la inactivacion
             GuardarEmpleadosTxt();
             return "El empleado " + emp.Nombre + " " + emp.Apellido + " fue inactivado.";
         }
@@ -256,7 +252,7 @@ namespace interfazgrafica
             return "Rechazado: No tiene una llegada registrada previamente.";
         }
 
-        // Funcionalidad 5: Generar reporte con ciclos, contadores, acumuladores, banderas, switch y matriz
+        // Funcionalidad 5: Reporte
         public string GenerarReporte()
         {
             int totalValidos = 0;
@@ -265,8 +261,8 @@ namespace interfazgrafica
             bool haySinSalida = false;
             bool huboRechazados = false;
 
-            // Reiniciamos la matriz en ceros antes de calcular
-            matrizHorasPorCargo = new double[4, 2];
+            // Matriz
+            matrizHorasPorCargo = new double[4, 2];//cargo,horas
 
             foreach (RegistroAsistencia reg in listaRegistros)
             {
@@ -312,7 +308,7 @@ namespace interfazgrafica
                              "Total horas nocturnas: " + Math.Round(sumaNocturnas, 2) + "\r\n";
 
             // Recorremos la matriz con un ciclo for para mostrar las horas por cada cargo
-            reporte = reporte + "\r\n--- HORAS POR CARGO (MATRIZ) ---\r\n";
+            reporte = reporte + "\r\n HORAS POR CARGO (MATRIZ) \r\n";
             for (int i = 0; i < 4; i++)
             {
                 reporte = reporte + cargos[i] + " -> Diurnas: " + Math.Round(matrizHorasPorCargo[i, 0], 2) +
@@ -369,7 +365,7 @@ namespace interfazgrafica
                             Convert.ToDateTime(datos[3]),
                             datos[4]
                         );
-                        emp.Activo = Convert.ToBoolean(datos[5]);
+                        emp.Activo = Convert.ToBoolean(datos[5]);//convertir texto en booleano
                         listaEmpleados.Add(emp);
                     }
                 }
@@ -383,7 +379,7 @@ namespace interfazgrafica
             foreach (RegistroAsistencia reg in listaRegistros)
             {
                 string linea = reg.Documento + "|" + reg.NombreCompleto + "|" +
-                               reg.HoraEntrada.ToString("yyyy-MM-dd HH:mm:ss") + "|" +
+                               reg.HoraEntrada.ToString("yyyy-MM-dd HH:mm:ss") + "|" +// convertir en texto
                                reg.HoraSalida.ToString("yyyy-MM-dd HH:mm:ss") + "|" +
                                reg.YaSalio + "|" + reg.HorasDiurnas + "|" + reg.HorasNocturnas;
                 archivo.WriteLine(linea);
@@ -399,7 +395,7 @@ namespace interfazgrafica
             }
 
             listaRegistros.Clear();
-            string[] lineas = File.ReadAllLines("registros.txt");
+            string[] lineas = File.ReadAllLines("registros.txt");//Arreglo
 
             foreach (string linea in lineas)
             {
@@ -421,6 +417,6 @@ namespace interfazgrafica
                     }
                 }
             }
-        }
-    }
-}
+        }//CargarRegistrosTxt
+    }//SistemaAsistencia
+}//Final 

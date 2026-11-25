@@ -1,1 +1,2 @@
 1025761178|Katheryn|Villada|2/11/2004|Analista|True
+1025767149|Jose|Calderon|25/11/2000|Operario|True
