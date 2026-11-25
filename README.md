@@ -28,6 +28,3 @@ Validación: No permite registrar salida si no tiene una llegada abierta previa 
 7. Evaluar horas laboradas diurnas y nocturnas + Reporte a Gestión Humana 
 Qué hace: Al registrar la salida, el sistema calcula automáticamente cuántas horas fueron diurnas (6:00 a. m. a 7:00 p. m.) y
 cuántas nocturnas (7:00 p. m. a 6:00 a. m.).
-Informe final: Muestra en una tabla (DataGridView) todos los registros y genera un resumen para Gestión Humana usando:
-Ciclos, contadores y acumuladores: total de registros válidos, total de intentos rechazados, suma total de horas diurnas y suma total de horas nocturnas.
-NOTA: avisa si quedaron empleados sin marcar salida o si hubo intentos rechazados.
