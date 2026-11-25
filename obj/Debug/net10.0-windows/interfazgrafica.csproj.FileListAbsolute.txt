@@ -1,0 +1,14 @@
+C:\Users\KATHERYN\Downloads\Interfaz_Grafica\interfazgrafica\bin\Debug\net10.0-windows\interfazgrafica.exe
+C:\Users\KATHERYN\Downloads\Interfaz_Grafica\interfazgrafica\bin\Debug\net10.0-windows\interfazgrafica.deps.json
+C:\Users\KATHERYN\Downloads\Interfaz_Grafica\interfazgrafica\bin\Debug\net10.0-windows\interfazgrafica.runtimeconfig.json
+C:\Users\KATHERYN\Downloads\Interfaz_Grafica\interfazgrafica\bin\Debug\net10.0-windows\interfazgrafica.dll
+C:\Users\KATHERYN\Downloads\Interfaz_Grafica\interfazgrafica\bin\Debug\net10.0-windows\interfazgrafica.pdb
+C:\Users\KATHERYN\Downloads\Interfaz_Grafica\interfazgrafica\obj\Debug\net10.0-windows\interfazgrafica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KATHERYN\Downloads\Interfaz_Grafica\interfazgrafica\obj\Debug\net10.0-windows\interfazgrafica.AssemblyInfoInputs.cache
+C:\Users\KATHERYN\Downloads\Interfaz_Grafica\interfazgrafica\obj\Debug\net10.0-windows\interfazgrafica.AssemblyInfo.cs
+C:\Users\KATHERYN\Downloads\Interfaz_Grafica\interfazgrafica\obj\Debug\net10.0-windows\interfazgrafica.csproj.CoreCompileInputs.cache
+C:\Users\KATHERYN\Downloads\Interfaz_Grafica\interfazgrafica\obj\Debug\net10.0-windows\interfazgrafica.dll
+C:\Users\KATHERYN\Downloads\Interfaz_Grafica\interfazgrafica\obj\Debug\net10.0-windows\refint\interfazgrafica.dll
+C:\Users\KATHERYN\Downloads\Interfaz_Grafica\interfazgrafica\obj\Debug\net10.0-windows\interfazgrafica.pdb
+C:\Users\KATHERYN\Downloads\Interfaz_Grafica\interfazgrafica\obj\Debug\net10.0-windows\interfazgrafica.genruntimeconfig.cache
+C:\Users\KATHERYN\Downloads\Interfaz_Grafica\interfazgrafica\obj\Debug\net10.0-windows\ref\interfazgrafica.dll
